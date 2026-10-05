@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #111827, #1e3a8a);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
+        .contenedor {
+            width: 100%;
+            max-width: 600px;
+            background: white;
+            border-radius: 18px;
+            padding: 35px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+        }
+
+        h1 {
+            text-align: center;
+            color: #1e3a8a;
+            margin-bottom: 10px;
+        }
+
+        .descripcion {
+            text-align: center;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 13px;
+            border: 2px solid #ddd;
+            border-radius: 9px;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 8px rgba(37,99,235,0.2);
+        }
+
+        textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        .opciones {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .opcion {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-weight: normal;
+        }
+
+        .opcion input {
+            width: auto;
+        }
+
+        .botones {
+            display: flex;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        button {
+            flex: 1;
+            padding: 14px;
+            border: none;
+            border-radius: 9px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .enviar {
+            background: #2563eb;
+            color: white;
+        }
+
+        .enviar:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .limpiar {
+            background: #e5e7eb;
+            color: #222;
+        }
+
+        .limpiar:hover {
+            background: #d1d5db;
+        }
+
+        .pie {
+            text-align: center;
+            margin-top: 25px;
+            color: #777;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <h1>Formulario HTML</h1>
+
+        <p class="descripcion">
+            Formulario
+        </p>
+
+        <form action="mailto:ejemplo@hotmail.com" method="post" enctype="text/plain">
+
+            <div>
+                <label for="nombre">Nombre completo:</label>
+                <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    value=""
+                    size="30"
+                    maxlength="50"
+                    placeholder="Escribe tu nombre"
+                    required
+                >
+            </div>
+
+            <div>
+                <label for="usuario">Nombre de usuario:</label>
+                <input
+                    type="text"
+                    id="usuario"
+                    name="usuario"
+                    value=""
+                    size="30"
+                    maxlength="50"
+                    placeholder="Escribe tu usuario"
+                >
+            </div>
+
+            <div>
+                <label for="contrasena">Contraseña:</label>
+                <input
+                    type="password"
+                    id="contrasena"
+                    name="contrasena"
+                    value=""
+                    placeholder="Escribe tu contraseña"
+                    required
+                >
+            </div>
+
+            <div>
+                <label for="correo">Correo electrónico:</label>
+                <input
+                    type="email"
+                    id="correo"
+                    name="correo"
+                    placeholder="ejemplo@correo.com"
+                    required
+                >
+            </div>
+
+            <div>
+                <label for="carrera">Selecciona tu carrera:</label>
+
+                <select id="carrera" name="carrera">
+                    <option value="">Selecciona una opción</option>
+                    <option value="programacion">Programación</option>
+                    <option value="mecanica">Mecánica</option>
+                    <option value="contabilidad">Contabilidad</option>
+                    <option value="administracion">Administración</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Turno:</label>
+
+                <div class="opciones">
+                    <label class="opcion">
+                        <input
+                            type="radio"
+                            name="turno"
+                            value="matutino"
+                        >
+                        Matutino
+                    </label>
+
+                    <label class="opcion">
+                        <input
+                            type="radio"
+                            name="turno"
+                            value="vespertino"
+                        >
+                        Vespertino
+                    </label>
+                </div>
+            </div>
+
+            <div>
+                <label>Intereses:</label>
+
+                <div class="opciones">
+                    <label class="opcion">
+                        <input
+                            type="checkbox"
+                            name="intereses"
+                            value="programacion"
+                        >
+                        Programación
+                    </label>
+
+                    <label class="opcion">
+                        <input
+                            type="checkbox"
+                            name="intereses"
+                            value="basesdedatos"
+                        >
+                        Bases de datos
+                    </label>
+
+                    <label class="opcion">
+                        <input
+                            type="checkbox"
+                            name="intereses"
+                            value="web"
+                        >
+                        Páginas web
+                    </label>
+                </div>
+            </div>
+
+            <div>
+                <label for="comentarios">Comentarios:</label>
+
+                <textarea
+                    id="comentarios"
+                    name="comentarios"
+                    placeholder="Escribe tus comentarios..."
+                ></textarea>
+            </div>
+
+            <div class="botones">
+
+                <button
+                    type="submit"
+                    class="enviar"
+                >
+                    Enviar formulario
+                </button>
+
+                <button
+                    type="reset"
+                    class="limpiar"
+                >
+                    Limpiar
+                </button>
+
+            </div>
+
+        </form>
+
+        <div class="pie">
+            Actividad: Creación de formularios de una página web
+        </div>
+
+    </div>
+
+</body>
+</html>
